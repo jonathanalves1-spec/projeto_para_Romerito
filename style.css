@@ -311,3 +311,41 @@ footer {
   font-size: 0.9rem;
   color: var(--text-muted);
 }
+/* ==========================================================================
+   8. RESPONSIVIDADE (VERIFICAÇÃO VISUAL EM DIFERENTES LARGURAS DE TELA)
+   ========================================================================== */
+/* Ajuste para Tablets / Telas Médias */
+@media (max-width: 900px) {
+  .car-card {
+    max-width: calc(50% - 0.75rem);
+  }
+}
+
+/* Ajuste para Telemóveis / Telas Pequenas */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .hero-section {
+    padding: 2rem 5%;
+    text-align: center;
+  }
+
+  .hero-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .car-card {
+    max-width: 100%;
+  }
+}
