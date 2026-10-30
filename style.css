@@ -1,0 +1,313 @@
+/* ==========================================================================
+   1. VARIÁVEIS, RESET E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+:root {
+  --bg-dark: #0d0f12;
+  --bg-card: #161a22;
+  --bg-card-hover: #1f2430;
+  --accent-red: #e63946;
+  --accent-red-hover: #ff4d5a;
+  --text-main: #ffffff;
+  --text-muted: #a0a6b2;
+  --border-color: #232936;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --transition: all 0.3s ease;
+}
+
+/* Seletores globais de elemento */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-family);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding-bottom: 3rem;
+}
+
+h1, h2, h3 {
+  color: var(--text-main);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: var(--text-muted);
+}
+
+header {
+  background-color: rgba(13, 15, 18, 0.95);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.2rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.logo h1 {
+  font-size: 1.75rem;
+  color: var(--accent-red);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.logo p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  position: relative;
+  padding-bottom: 6px;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--text-main);
+}
+
+nav a.active::after,
+nav a:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-red);
+}
+
+.hero-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  padding: 4rem 5%;
+  min-height: 70vh;
+}
+
+.hero-content {
+  flex: 1 1 400px;
+}
+
+.hero-content h2 {
+  font-size: 2.8rem;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.hero-image {
+  flex: 1 1 400px;
+}
+
+.hero-image img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--accent-red);
+  color: var(--text-main);
+  padding: 0.8rem 1.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background-color: var(--accent-red-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+}
+
+.highlights-section {
+  padding: 3rem 5%;
+  background-color: rgba(22, 26, 34, 0.4);
+}
+
+.card-container,
+.info-box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card,
+.info-box {
+  flex: 1 1 280px;
+  background-color: var(--bg-card);
+  padding: 1.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.card:hover,
+.info-box:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-red);
+  background-color: var(--bg-card-hover);
+}
+
+.card h3,
+.info-box h3 {
+  font-size: 1.25rem;
+  color: var(--accent-red);
+  margin-bottom: 0.8rem;
+}
+
+.info-box ul {
+  list-style: none;
+}
+
+.info-box li {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+}
+
+.info-box li strong {
+  color: var(--text-main);
+}
+
+.info-box code {
+  background-color: rgba(230, 57, 70, 0.15);
+  color: var(--accent-red-hover);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-family: monospace;
+}
+/*galeria**/
+.gallery-category {
+  padding: 3rem 5%;
+}
+
+.section-desc {
+  margin-bottom: 1.5rem;
+}
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+
+.car-card {
+  flex: 1 1 280px;
+  max-width: calc(33.333% - 1rem);
+  background-color: var(--bg-card);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  border-color: var(--accent-red);
+}
+
+.car-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.car-info {
+  padding: 1.2rem;
+}
+
+.car-info h3 {
+  font-size: 1.15rem;
+  margin-top: 0.4rem;
+}
+
+/* Tags coloridas das marcas */
+.tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.tag.red    { background-color: rgba(230, 57, 70, 0.2); color: #ff4d5a; }
+.tag.green  { background-color: rgba(46, 204, 113, 0.2); color: #2ecc71; }
+.tag.orange { background-color: rgba(230, 126, 34, 0.2); color: #e67e22; }
+.tag.blue   { background-color: rgba(52, 152, 219, 0.2); color: #3498db; }
+.tag.purple { background-color: rgba(155, 89, 182, 0.2); color: #9b59b6; }
+.tag.yellow { background-color: rgba(241, 196, 15, 0.2); color: #f1c40f; }
+.tag.cyan   { background-color: rgba(26, 188, 156, 0.2); color: #1abc9c; }
+.tag.white  { background-color: rgba(255, 255, 255, 0.2); color: #ecf0f1; }
+
+/*  PÁGINA SOBRE O PROJETO*/
+.about-section,
+.requirements-section {
+  padding: 3rem 5%;
+}
+
+.about-section > p {
+  max-width: 800px;
+  font-size: 1.05rem;
+}
+/**rodapé**/
+footer {
+  background-color: rgba(13, 15, 18, 0.95);
+  border-top: 1px solid var(--border-color);
+  padding: 1.5rem 5%;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
